@@ -1,8 +1,13 @@
 import { useState } from "react"
 import AuthInput from "../components/auth/AuthInputh"
 import { IconeAtencao } from "../components/icons"
+import useAuth from "../data/hook/useAuth";
 
 export default function Autenticacao() {
+
+    const { usuario, loginGoogle } = useAuth();
+
+
     const [erro, setErro] = useState(null)
     const [modo, setModo]   = useState<'login' | 'cadastro'>('login')
     const [email, setEmail] = useState('')
@@ -28,7 +33,7 @@ export default function Autenticacao() {
 
         <div className={`flex h-screen items-center justify-center`}>
             <div className="hidden md:block md:w-1/2 lg:w-2/3">
-                <img 
+                <img
                     src="https://source.unsplash.com/random" 
                     alt="Imagem da Tela de Autenticação"
                     className="h-screen w-full object-cover" />
@@ -77,7 +82,7 @@ export default function Autenticacao() {
 
             <hr className="my-6 border-gray-300 w-full" />
 
-            <button onClick={submeter} className={`
+            <button onClick={loginGoogle} className={`
                 w-full bg-red-500 hover:bg-red-400
                 text-white rounded-lg px-4 py-3
             `}>
