@@ -16,6 +16,7 @@ export default function AvatarUsuario(props: AvatarUsuarioProps) {
                 h-10 w-10 rounded-full cursor-pointer
                 ${props.className}
             `}
+            referrerPolicy="no-referrer"
             
             
             />
